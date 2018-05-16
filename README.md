@@ -1,8 +1,8 @@
 # YouthfulDream.github.io
 https://youthfuldream.github.io/
-Jie's "Youthful Dream"
+Jie's "Youthful Dream" -  _solid-happiness_
 
-_solid-happiness_
+Still a work in progress!
 
 **Alternative Links** 
 1. https://tinyurl.com/YouthfulDream
