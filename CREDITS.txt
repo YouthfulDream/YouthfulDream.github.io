@@ -25,6 +25,8 @@ All default images courtesy of Unsplash (https://unsplash.com).
 - Mikhail Pavstyuk	(https://unsplash.com/photos/EKy2OTRPXdw)	prose.html
 - Nick Fewings		(https://unsplash.com/photos/f2Bi-VBs71M)	misc.html
 - Pankaj Patel		(https://unsplash.com/photos/AokNDjneDd8)	imageCredits.html
+- Edoardo Busti		(https://unsplash.com/photos/83M5A9Dw6GU)	160928Assisi.html
+
 
 ===============================================================
 
@@ -33,8 +35,8 @@ Other Images Images
 - Jie Chen		(https://www.facebook.com/photo.php?fbid=270034739854299&set=a.137960749728366.1073741825.100005433241070&type=3&theater)
 									index.html
 - Lucas Soohoo 		(https://lgsoohoo.github.io)			webmaster.html
-- Lucas Soohoo 		(https://lgsoohoo.github.io)			webmaster.html
 - Lucas	Soohoo		(https://lgsoohoo.github.io)			404.html
+- WorldYouthDay.com	(http://worldyouthday.com/krakow-2016)		160828WYDIVE.html	
 
 
 
