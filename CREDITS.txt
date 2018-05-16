@@ -1,7 +1,7 @@
 # Image Credits
 
 All default images courtesy of Unsplash (https://unsplash.com).
-	
+
 	Default Unsplash images: ["pic##.jpg"]
 - Scott Webb	 	(https://unsplash.com/photos/uAgLGG1WBd4)
 - Joshua Earle	 	(https://unsplash.com/photos/CND1MBxLA6M)
@@ -36,8 +36,4 @@ Other Images Images
 - Lucas Soohoo 		(https://lgsoohoo.github.io)			webmaster.html
 - Lucas Soohoo 		(https://lgsoohoo.github.io)			webmaster.html
 - Lucas	Soohoo		(https://lgsoohoo.github.io)			404.html
-- WorldYouthDay.com	(http://worldyouthday.com/krakow-2016)		reflectJournal/160828WYDIVE.html	
-
-
-
-
+- WorldYouthDay.com	(http://worldyouthday.com/krakow-2016)		reflectJournal/160828WYDIVE.html
