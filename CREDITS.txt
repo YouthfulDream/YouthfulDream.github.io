@@ -26,6 +26,7 @@ All default images courtesy of Unsplash (https://unsplash.com).
 - Nick Fewings		(https://unsplash.com/photos/f2Bi-VBs71M)	misc.html
 - Pankaj Patel		(https://unsplash.com/photos/AokNDjneDd8)	imageCredits.html
 - Edoardo Busti		(https://unsplash.com/photos/83M5A9Dw6GU)	reflectJournal/160928Assisi.html
+-Rene Bernal		(https://unsplash.com/photos/NcMm9h09ljQ)		reflectJournal/161226YearReview.html
 
 ===============================================================
 
