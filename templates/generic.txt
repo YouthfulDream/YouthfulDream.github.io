@@ -48,7 +48,7 @@
   <section id="main">
     <div class="inner">
       <div class="row 50% uniform">
-        <div class="9u"><span class="image fit"><img src="../images/<!--TODO File name -->" alt="<!- -TODO alt Description - ->" /></span>
+        <div class="6u"><span class="image fit"><img src="../images/<!--TODO File name -->" alt="<!- -TODO alt Description - ->" /></span>
         </div>
       </div>
       <header>
