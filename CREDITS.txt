@@ -27,14 +27,11 @@ All default images courtesy of Unsplash (https://unsplash.com).
 - Pankaj Patel		(https://unsplash.com/photos/AokNDjneDd8)	imageCredits.html
 - Edoardo Busti		(https://unsplash.com/photos/83M5A9Dw6GU)	reflectJournal/160928Assisi.html
 - Rene Bernal		(https://unsplash.com/photos/NcMm9h09ljQ)	reflectJournal/161226YearReview.html
-
-
-
-
-- Calvin Hanson		(https://unsplash.com/photos/POqJeWrVfnU)	reflectJournal/backToEurope.html
-- David Pisnoy		(https://unsplash.com/photos/S_ao-YqXl2w)	reflectJournal/yearFour.html	
-- Niko Soikkeli		(https://unsplash.com/photos/tGTVxeOr_Rs)	reflectJournal/daysOfApril.html	
-- Tim Chow		(https://unsplash.com/photos/dNmO8BNSrGM)	reflectJournal/chineseNewYear.html
+- Tim Chow		(https://unsplash.com/photos/dNmO8BNSrGM)	reflectJournal/170100chineseNewYear.html
+- David Pisnoy		(https://unsplash.com/photos/S_ao-YqXl2w)	reflectJournal/170200yearFour.html
+- Niko Soikkeli		(https://unsplash.com/photos/tGTVxeOr_Rs)	reflectJournal/170500daysOfApril.html	
+- Calvin Hanson		(https://unsplash.com/photos/POqJeWrVfnU)	reflectJournal/170700backToEurope.html
+- Andrew Small		(https://unsplash.com/photos/EfhCUc_fjrU)	reflectJournal/180527MayNotes.html
 
 ===============================================================
 
