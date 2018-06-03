@@ -1,5 +1,5 @@
 #By Lucas Soohoo, Summer 2018
-print("Youthful Dream - Article HTML Generator\n")
+print("Youthful Dream - HTML Generator\n")
 print("Please enter the following:\n")
 print("---------------------------------------\n")
 title = input("Enter title:")
@@ -43,16 +43,17 @@ copyHTML.write("Photographer Credits:\n")
 copyHTML.write("- " + imgOwner + "\t\t(" + imgURL + ")" + "\t\t" + categHTML + "\\" + htmlName)
 
 ## Generate Featured Article content
-copyHTML.write("\n'Featured' Article code\n")
+copyHTML.write("\n'Featured' Article code")
 
 numToEng = ["", "one", "two", "three", "four", "five", "menu"]
 classes = ["", "post style1", "post invert style1 alt", "post style2", "post invert style2 alt", "post style3", "post invert style3 alt"]
 num = int(0)
 while num > 5 or num < 1:
-  num = int(input("'Featured Article' # to replace:"))
+  num = int(input("'Featured Article' # to replace (which is at the bottom):"))
 print("\nGenerated 'Feature Article' code")
+copyHTML.write("Delete the '" + numToEng[num]+ "' block from the bottom of index.html and paste the following after 'Begin Featured'\n")
 
-copyHTML.write("<!-- " + numToEng[num] + " -->")
+copyHTML.write("<!-- Start " + numToEng[num] + " -->")
 
 copyHTML.write("<article id=\"" + numToEng[num] + "\" class=\"" + classes[num] + "\">")
 copyHTML.write("  <div class=\"image\">    <img src=\"" + img + "\" alt=\"" + imgAlt + "\" data-position=\"75% center\" />")
@@ -64,9 +65,12 @@ copyHTML.write(articleDesc)
 copyHTML.write("              </p>      <ul class=\"actions\"> <li><a href=\"" + categHTML + "\\" + htmlName + "\" class=\"button alt\">Read More</a>        </li>      </ul>    </div>    <div class=\"postnav\">  ")
 copyHTML.write("      <a href=\"#" + numToEng[num - 1] + "\" class=\"prev disabled\"><span class=\"icon fa-chevron-up\"></span></a>")
 copyHTML.write("      <a href=\"#" + numToEng[num + 1] + "\" class=\"scrolly next\"><span class=\"icon fa-chevron-down\"></span></a>    </div>  </div></article>")
+copyHTML.write("<!-- End " + numToEng[num] + " -->")
 
 
 print("Generated code for "+categHTML+".html")
 copyHTML.write("\nCode for "+categHTML+".html\n")
 copyHTML.write("<tr><td><a href='"+htmlName+"'>"+title+"</a></td>")
 copyHTML.write("<td>"+articleDesc+"</td><td>"+ month + "." + day + ".20" + year+"</td></tr>")
+
+print("Finished.")
