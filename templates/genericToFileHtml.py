@@ -1,7 +1,7 @@
 #By Lucas Soohoo, Summer 2018
-print("Youthful Dream - HTML Generator\n")
-print("Please enter the following:\n")
-print("---------------------------------------\n")
+print("\nYouthful Dream - HTML Generator")
+print("Please enter the following:")
+print("---------------------------------------")
 title = input("Enter title:")
 
 year = input("Enter date-year (yy):")
@@ -10,9 +10,10 @@ day = input("Enter date-day (dd):")
 
 htmlName = year + month + day + input("Enter short English name for HTML file:") + ".html"
 
-catg = input("Enter public category name (Ex. Reflections & Journal):")
-categHTML = input("Enter category HTML file(without .html):")
-articleContent = input("Enter article content including [<br><br>&emsp;&emsp;] :")
+catg = input("Enter CHINESE category name (rJ>反思&日志):")
+categHTML = input("Enter category folder name:")
+articleContent = "ARTICLE_CONTENT"
+print("Temp article content including [<br><br>&emsp;&emsp;] marked as ARTICLE_CONTENT.")
 articleDesc = input("Enter article description:")
 
 img = "images/" + input("Enter path to image: images/")
