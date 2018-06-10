@@ -1,4 +1,5 @@
 # Image Credits
+## This file is no longer being updated. Please see the /images/imageCredits.html for the full credits.
 
 All default images courtesy of Unsplash (https://unsplash.com).
 
