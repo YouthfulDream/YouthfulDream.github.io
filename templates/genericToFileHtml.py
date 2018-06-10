@@ -33,8 +33,17 @@ newHtmlFile.write("<!-- Nav --><nav id=\"menu\">    <ul class=\"links\">      <l
 
 newHtmlFile.write("<!-- Main -->  <section id=\"main\">    <div class=\"inner\">      <div class=\"row 50% uniform\">        <div class=\"6u\"><span class=\"image fit\"><img src=\"../" + img + "\" alt=\"" + imgAlt + "\" /></span>        </div>      </div>      <header>        <h1>" + title + "</h1>        <h4>" + month + "." + day + ".20" + year + " &ensp; 种类: <font color ='#1abc9c'><a href = '" + categHTML + ".html'>" + catg + "</a></font>.</h4>      </header>      <p>        <!--Start Article   <br><br>&emsp;&emsp;   -->             " + articleContent + "      <!--End Article -->      </p>    </div>  </section>")
 newHtmlFile.write("<!-- Footer --><footer id=\"footer\">  <ul class=\"icons\">    <li><a href=\"https://github.com/YouthfulDream/YouthfulDream.github.io\" class=\"icon fa-github\"><span class=\"label\">GitHub</span></a>    </li>    <li><a href=\"https://www.facebook.com/profile.php?id=100005433241070\" class=\"icon fa-facebook\"><span class=\"label\">Facebook</span></a>    </li>    <li><a href=\"mailto:YouthfulDream18@gmail.com\" class=\"icon fa-envelope\"><span class=\"label\">Email</span></a>    </li>  </ul> <div class=\"copyright\">    &copy; <a href=\"/about/about.html\">陈杰</a>. 网络管理员: <a href=\"/about/webmaster.html\">Lucas Soohoo</a>. 设计: <a href=\"https://templated.co\">TEMPLATED</a>. <a href=\"/images/imageCredits.html\">图片来源</a>.  </div></footer>")
-newHtmlFile.write("<!-- Scripts -->  <script src=\"../assets/js/jquery.min.js\"></script>  <script src=\"../assets/js/jquery.scrolly.min.js\"></script>  <script src=\"../assets/js/skel.min.js\">")
-newHtmlFile.write("</script>  <script scr=\"../assets/js/util.js\"></script>  <script src=\"../assets/js/main.js\"></script></body></html>")
+
+newHtmlFile.write("  <!-- Scripts -->  <script src=\"../assets/js/jquery.min.js\"></script>")
+newHtmlFile.write("  <script src=\"../assets/js/jquery.scrolly.min.js\"></script>")
+newHtmlFile.write("	 <script src=\"../assets/js/skel.min.js\"></script>")
+newHtmlFile.write("  <script src=\"../assets/js/util.js\"></script>")
+newHtmlFile.write("  <script src=\"../assets/js/main.js\"></script>")
+newHtmlFile.write("</body></html>")
+
+
+#   OLD SRIPTS SECTINO      newHtmlFile.write("<!-- Scripts -->  <script src=\"../assets/js/jquery.min.js\"></script>  <script src=\"../assets/js/jquery.scrolly.min.js\"></script>  <script src=\"../assets/js/skel.min.js\">")
+#		newHtmlFile.write("</script>  <script scr=\"../assets/js/util.js\"></script>  <script src=\"../assets/js/main.js\"></script></body></html>")
 
 copyHTMLName = "copy-"+htmlName
 copyHTML = open(copyHTMLName,"x")
@@ -48,9 +57,11 @@ copyHTML.write("Copy info for "+htmlName)
 ## Photographer Credits
 print("\nPhotographer credits generated under "+copyHTMLName)
 copyHTML.write("\nPhotographer Credits:\n")
-copyHTML.write("- " + imgOwner + "\t\t(" + imgURL + ")" + "\t\t" + categHTML + "\\" + htmlName)
+copyHTML.write("<tr><td><a href =\""+imgURL+"\">"+imgOwner+"</a></td>")
+copyHTML.write("<tr><td><a href =\"../"+categHTML+"/"+htmlName+"\">"+title+"</a></td></tr>")
 
-## Generate Featured Article content
+
+## Generate 'Featured Article' content
 copyHTML.write("\n\n'Featured' Article code")
 
 numToEng = ["", "one", "two", "three", "four", "five", "menu"]
