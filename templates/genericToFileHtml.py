@@ -10,13 +10,26 @@ day = input("Enter date-day (dd):")
 
 htmlName = year + month + day + input("Enter short English name for HTML file:") + ".html"
 
-catg = input("Enter CHINESE category name (rJ>反思&日志):")
-categHTML = input("Enter category folder name:")
+englishList=["reflectJournal","fiction","poems","prose","misc"]
+chineseList=["反思&日志","小说","诗歌","散文","网络管理员"]
+print("0:rJ"+chineseList[0])
+print("fic"+chineseList[1])
+print("poems"+chineseList[2])
+print("prose"+chineseList[3])
+print("4:misc"+chineseList[4])
+list=input("Choose from list-use integer #")
+list=int(list)
+categHTML = englishList[list]
+
+catg = chineseList[list]
+
+
+
 articleContent = "ARTICLE_CONTENT"
 print("Temp article content including [<br><br>&emsp;&emsp;] marked as ARTICLE_CONTENT.")
 articleDesc = input("Enter article description:")
 
-img = "images/" + input("Enter path to image: images/")
+img = "images/img"+categHTML "/"+ input("Enter image location with extension (.jpg): ")
 imgAlt = input("Enter image description:")
 imgURL = input("Enter image URL:")
 imgOwner = input("Enter photographer's name:")
@@ -42,9 +55,6 @@ newHtmlFile.write("  <script src=\"../assets/js/main.js\"></script>")
 newHtmlFile.write("</body></html>")
 
 
-#   OLD SRIPTS SECTINO      newHtmlFile.write("<!-- Scripts -->  <script src=\"../assets/js/jquery.min.js\"></script>  <script src=\"../assets/js/jquery.scrolly.min.js\"></script>  <script src=\"../assets/js/skel.min.js\">")
-#		newHtmlFile.write("</script>  <script scr=\"../assets/js/util.js\"></script>  <script src=\"../assets/js/main.js\"></script></body></html>")
-
 copyHTMLName = "copy-"+htmlName
 copyHTML = open(copyHTMLName,"x")
 copyHTML = open(copyHTMLName,"a")
@@ -58,17 +68,17 @@ copyHTML.write("Copy info for "+htmlName)
 print("\nPhotographer credits generated under "+copyHTMLName)
 copyHTML.write("\nPhotographer Credits:\n")
 copyHTML.write("<tr><td><a href =\""+imgURL+"\">"+imgOwner+"</a></td>")
-copyHTML.write("<tr><td><a href =\"../"+categHTML+"/"+htmlName+"\">"+title+"</a></td></tr>")
+copyHTML.write("<td><a href =\"../"+categHTML+"/"+htmlName+"\">"+title+"</a></td></tr>")
 
 
 ## Generate 'Featured Article' content
 copyHTML.write("\n\n'Featured' Article code")
 
-numToEng = ["", "one", "two", "three", "four", "five", "menu"]
+numToEng = ["", "one", "two", "three", "four", "five", "six","menu"]
 classes = ["", "post style1", "post invert style1 alt", "post style2", "post invert style2 alt", "post style3", "post invert style3 alt"]
 num = int(0)
-while num > 5 or num < 1:
-  num = int(input("'Featured Article' # to replace (which is at the bottom):"))
+while num > 6 or num < 1:
+  num = int(input("'Featured Article' # to replace (which is at the bottom)(integer):"))
 print("\nGenerated 'Feature Article' code")
 copyHTML.write("\nDelete the '" + numToEng[num]+ "' block from the bottom of index.html and paste the following after 'Begin Featured'\n")
 
@@ -82,10 +92,10 @@ copyHTML.write(" &ensp; 种类:    <font color='#1abc9c'><a href='" + categHTML 
 copyHTML.write("        </p>      </header>      <p>         <!-- Feature Description goes here -->")
 copyHTML.write(articleDesc)
 copyHTML.write("              </p>      <ul class=\"actions\"> <li><a href=\"" + categHTML + "\\" + htmlName + "\" class=\"button alt\">阅读更多</a>        </li>      </ul>    </div>    <div class=\"postnav\">  ")
-copyHTML.write("      <a href=\"#" + numToEng[num - 1] + "\" class=\"prev disabled\"><span class=\"icon fa-chevron-up\"></span></a>")
-copyHTML.write("      <a href=\"#" + numToEng[num + 1] + "\" class=\"scrolly next\"><span class=\"icon fa-chevron-down\"></span></a>    </div>  </div></article>")
+copyHTML.write("      <a href=\"#" + "\" class=\"prev disabled\"><span class=\"icon fa-chevron-up\"></span></a>")
+copyHTML.write("      <a href=\"#" + numToEng[(num + 1)] + "\" class=\"scrolly next\"><span class=\"icon fa-chevron-down\"></span></a>    </div>  </div></article>")
 copyHTML.write("<!-- End " + numToEng[num] + " -->")
-
+copyHTML.write("change class:  'prev disabled' => 'scrolly prev'")
 
 print("Generated code for "+categHTML+".html")
 copyHTML.write("\n\nCode for "+categHTML+".html\n")
