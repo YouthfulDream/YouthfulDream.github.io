@@ -29,7 +29,7 @@ articleContent = "ARTICLE_CONTENT"
 print("Temp article content including [<br><br>&emsp;&emsp;] marked as ARTICLE_CONTENT.")
 articleDesc = input("Enter article description:")
 
-img = "images/img"+categHTML "/"+ input("Enter image location with extension (.jpg): ")
+img ="images/"+ input("Enter image file location and namename with extension (.jpg): images/ ")
 imgAlt = input("Enter image description:")
 imgURL = input("Enter image URL:")
 imgOwner = input("Enter photographer's name:")
@@ -95,11 +95,13 @@ copyHTML.write("              </p>      <ul class=\"actions\"> <li><a href=\"" +
 copyHTML.write("      <a href=\"#" + "\" class=\"prev disabled\"><span class=\"icon fa-chevron-up\"></span></a>")
 copyHTML.write("      <a href=\"#" + numToEng[(num + 1)] + "\" class=\"scrolly next\"><span class=\"icon fa-chevron-down\"></span></a>    </div>  </div></article>")
 copyHTML.write("<!-- End " + numToEng[num] + " -->")
-copyHTML.write("change class:  'prev disabled' => 'scrolly prev'")
+copyHTML.write("\n change class:  'prev disabled' => 'scrolly prev'")
 
 print("Generated code for "+categHTML+".html")
 copyHTML.write("\n\nCode for "+categHTML+".html\n")
 copyHTML.write("<tr><td><a href='"+htmlName+"'>"+title+"</a></td>")
 copyHTML.write("<td>"+articleDesc+"</td><td>"+ month + "." + day + ".20" + year+"</td></tr>")
+
+copyHTML.write("NOW COPY THE ARTICLE CONTENT")
 
 print("Finished.")
