@@ -2,7 +2,6 @@
 https://youthfuldream.github.io/
 Jie's "Youthful Dream" : _solid-happiness_
 
-Still a work in progress!
 
 **Alternative Links**
 1. https://tinyurl.com/YouthfulDream
