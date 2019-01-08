@@ -110,6 +110,8 @@ numPlusOne = (num + 1)%6
 print("\nGenerated 'Feature Article' code")
 copyHTML.write("\tDelete the '" + numToEng[num]+ "' block from the bottom of index.html and paste the following after 'Begin Featured'\n")
 copyHTML.write("\tDisable/Enable button: 'prev disabled' <==> 'scrolly prev'\n--------------------\n")
+copyHTML.write("Don't forget to update the green button to go to the first article'\n--------------------\n")
+
 
 
 copyHTML.write("<!-- Start " + numToEng[num] + " -->")
