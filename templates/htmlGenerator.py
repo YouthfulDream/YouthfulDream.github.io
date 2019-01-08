@@ -1,4 +1,7 @@
-#By Lucas Soohoo, Summer 2018
+#Generate HTML code for https://youthfuldream.github.io/
+    #By Lucas Soohoo, Summer 2018
+    #Last updated: 2019/01/08
+
 print("\nYouthful Dream - HTML Generator")
 print("Please enter the following:")
 print("---------------------------------------")
@@ -11,31 +14,35 @@ month = input("Enter date-month (MM):")
 day = input("Enter date-day (dd):")
 
 #generate .html filename
-htmlName = year + month + day + input("Enter short English name for HTML file:") + ".html"
+htmlName = year + month + day + input("Enter short English name for HTML file (*****.html):") + ".html"
 
 #category name (Chinese), folder name (English)
 englishList=["reflectJournal","fiction","poems","prose","misc"]
 chineseList=["反思&日志","小说","诗歌","散文","网络管理员"]
-print("1:rJ "+chineseList[0])
-print("2:fic "+chineseList[1])
+print("1:reflectJournal "+chineseList[0])
+print("2:fiction "+chineseList[1])
 print("3:poems "+chineseList[2])
 print("4:prose "+chineseList[3])
 print("5:misc "+chineseList[4])
 list=99
 while list>4 or list <0:
-  list=int(input("Choose from list-use integer #1-5:"))-1
+  list=int(input("Choose from list: type a number #1-5:"))-1
 categHTML = englishList[list]
 catg = chineseList[list]
-print("categHTML:"+categHTML)
+print("\ncategHTML:"+categHTML)
 print("catg:"+catg)
 
 #article description/content placeholder
 articleContent = "\nARTICLE_CONTENT\n"
-print("Temp article content including [<br><br>&emsp;&emsp;] marked as ARTICLE_CONTENT.")
-articleDesc = input("Enter article description:")
+print("Placeholder for article content (including <br><br>&emsp;&emsp;) will be marked as \"ARTICLE_CONTENT.\"")
+articleDesc = input("\nEnter article description:")
 
 #image information
-img ="images/"+ categHTML.title()+ "/"+ input("Enter image file name with extension (.jpg):")
+    #determine the images folder name
+imagesFolders=["imgReflectJournal","imgFiction","imgPoems","imgProse","imgMisc"]
+imgFolderName = imagesFolders[list]
+
+img ="images/"+ imgFolderName+ "/"+ input("Enter image file name with extension, no path (images/"+imgFolderName+ "/   *****.xxx   ):")
 imgAlt = input("Enter image description:")
 imgURL = input("Enter image URL:")
 imgOwner = input("Enter photographer's name:")
@@ -47,7 +54,7 @@ newHtmlFile = open(newFileLocation,"x")
 newHtmlFile = open(newFileLocation,"a")
 
 # Article Code
-print("\nArticle HTML file generated under " + htmlName)
+print("Article HTML file generated under '" + htmlName + "'")
 newHtmlFile.write("<!DOCTYPE HTML><!--	Binary by TEMPLATED	templated.co @templatedco	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)--><html><head>  <title>    " + title + " - 青春逐梦</title>")
 newHtmlFile.write("<meta charset=\"utf-8\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" /><link rel=\"stylesheet\" href=\"../assets/css/main.css\" /></head><body><!-- Header --><header id=\"header\"><a href=\"../index.html\" class=\"logo\"><strong>青春逐梦</strong></a><nav><a href=\"#menu\">菜单</a></nav></header>")
 newHtmlFile.write("<!-- Nav --><nav id=\"menu\">    <ul class=\"links\">      <li><a href=\"../index.html\">主页</a>      </li>      <li><a href=\"../about/about.html\">关于</a>      </li>      <li><a href=\"../reflectJournal/reflectJournal.html\">反思&日志</a>      </li>      <li><a href=\"../fiction/fiction.html\">小说</a>      </li>      <li><a href=\"../poems/poems.html\">诗歌</a>      </li>      <li><a href=\"../prose/prose.html\">散文</a>      </li>      <li><a href=\"../misc/misc.html\">网络管理员</a>      </li>    </ul>  </nav>")
@@ -67,29 +74,45 @@ newHtmlFile.write("</body></html>")
 copyHTMLName = "extraCode-"+htmlName
 copyHTML = open(copyHTMLName,"x")
 copyHTML = open(copyHTMLName,"a")
-copyHTML.write("Copy info for "+htmlName)
+copyHTML.write("Extra HTML Code for:\t"+htmlName)
+copyHTML.write("\n====================\n")
+
 
 ## Photographer Credits
-print("\nPhotographer credits generated under "+copyHTMLName)
-copyHTML.write("\nPhotographer Credits:\n")
+print("\nPhotographer credits generated under "+copyHTMLName +"\n")
+copyHTML.write("\n\nPhotographer Credits:\n\t\t/images/imageCredits.html\n--------------------\n")
 copyHTML.write("<tr><td><a href =\""+imgURL+"\">"+imgOwner+"</a></td>")
 copyHTML.write("<td><a href =\"../"+categHTML+"/"+htmlName+"\">"+title+"</a></td></tr>")
 
 ## Generate 'Featured Article' content
-copyHTML.write("\n\n'Featured' Article code")
+copyHTML.write("\n\n\n'Featured Article' code:\n\t\t/index.html\n")
 
 #determine "Featured Article" number
 numToEng = ["one", "two", "three", "four", "five", "six"]
 classes = ["post style1", "post invert style1 alt", "post style2", "post invert style2 alt", "post style3", "post invert style3 alt"]
 num = int(99)
-while num > 5 or num < 1:
-  num = int(input("'Featured Article' # to replace (which is at the bottom)(int#1-6):"))-1
+while num > 6 or num < 1:
+    #want 1-6 inclusive
+    num = int(input("'Featured Article' # to replace (which is at the bottom)(int#1-6):"))
+
+num -= 1
+    #convert so 'num' can point to an index
+
+#'previous' index
+numMinusOne = num-1
+if numMinusOne==-1:
+    numMinusOne=5
+
+#'next' index
+numPlusOne = (num + 1)%6
 
 #extra Code writer
 print("\nGenerated 'Feature Article' code")
-copyHTML.write("\nDelete the '" + numToEng[num]+ "' block from the bottom of index.html and paste the following after 'Begin Featured'\n")
+copyHTML.write("\tDelete the '" + numToEng[num]+ "' block from the bottom of index.html and paste the following after 'Begin Featured'\n")
+copyHTML.write("\tDisable/Enable button: 'prev disabled' <==> 'scrolly prev'\n--------------------\n")
 
-copyHTML.write("\n<!-- Start " + numToEng[num] + " -->")
+
+copyHTML.write("<!-- Start " + numToEng[num] + " -->")
 
 copyHTML.write("<article id=\"" + numToEng[num] + "\" class=\"" + classes[num] + "\">")
 copyHTML.write("  <div class=\"image\">    <img src=\"" + img + "\" alt=\"" + imgAlt + "\" data-position=\"75% center\" />")
@@ -99,16 +122,17 @@ copyHTML.write(" &ensp; 种类:    <font color='#1abc9c'><a href='" + categHTML 
 copyHTML.write("        </p>      </header>      <p>         <!-- Feature Description goes here -->")
 copyHTML.write(articleDesc)
 copyHTML.write("              </p>      <ul class=\"actions\"> <li><a href=\"" + categHTML + "\\" + htmlName + "\" class=\"button alt\">阅读更多</a>        </li>      </ul>    </div>    <div class=\"postnav\">  ")
-copyHTML.write("      <a href=\"#" + "\" class=\"prev disabled\"><span class=\"icon fa-chevron-up\"></span></a>")
-copyHTML.write("      <a href=\"#" + numToEng[(num + 1)%6] + "\" class=\"scrolly next\"><span class=\"icon fa-chevron-down\"></span></a>    </div>  </div></article>")
+copyHTML.write("      <a href=\"#" + numToEng[numMinusOne] + "\" class=\"prev disabled\"><span class=\"icon fa-chevron-up\"></span></a>")
+copyHTML.write("      <a href=\"#" + numToEng[numPlusOne] + "\" class=\"scrolly next\"><span class=\"icon fa-chevron-down\"></span></a>    </div>  </div></article>")
 copyHTML.write("<!-- End " + numToEng[num] + " -->")
-copyHTML.write("\n change class:  'prev disabled' => 'scrolly prev'")
 
 print("Generated code for "+categHTML+".html")
-copyHTML.write("\n\nCode for "+categHTML+".html\n")
+copyHTML.write("\n\n\nCategory Homepage code:\n\t\t"+categHTML+"\\"+categHTML+".html\n--------------------\n")
+
 copyHTML.write("<tr><td><a href='"+htmlName+"'>"+title+"</a></td>")
 copyHTML.write("<td>"+articleDesc+"</td><td>"+ month + "." + day + ".20" + year+"</td></tr>")
 
-copyHTML.write("\n NOW COPY/paste THE ARTICLE CONTENT")
+copyHTML.write("\n\n\n Article Content note:\n\t\t"+categHTML + "\\" + htmlName)
+copyHTML.write("\n--------------------\nDon't forget to replace 'ARTICLE_CONTENT' with the actual article.\n<br><br>&emsp;&emsp;")
 
 print("Finished.")
